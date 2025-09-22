@@ -1,0 +1,12 @@
+
+
+[
+  {
+    "slug": "tictactoe",
+    "name": "Tic Tac Toe",
+    "description": "Neon-themed, AI opponent, keyboard-friendly.",
+    "tags": ["game", "ai", "web"],
+    "updated": "2025-09-22",
+    "path": "tictactoe/"
+  }
+]

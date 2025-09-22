@@ -1,0 +1,63 @@
+<!-- /lab/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Lab — Experiments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="lab.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="title">THE LAB</h1>
+        <p class="tagline">Side projects. Prototypes. Playgrounds.</p>
+      </div>
+      <nav class="quick">
+  <a href="https://chaddytwiceover.com" class="link-root" aria-label="Back to main site">← Main</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Project filters">
+      <div class="search">
+        <input id="search" type="search" placeholder="Search projects…" aria-label="Search projects" />
+      </div>
+
+      <div class="filters">
+        <div id="tag-chips" class="chips" role="group" aria-label="Filter by tag"></div>
+        <div class="sort">
+          <label for="sort">Sort</label>
+          <select id="sort" aria-label="Sort projects">
+            <option value="updated-desc">Recently updated</option>
+            <option value="updated-asc">Oldest first</option>
+            <option value="name-asc">Name A → Z</option>
+            <option value="name-desc">Name Z → A</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section aria-live="polite">
+      <div id="grid" class="grid" role="list"></div>
+      <p id="empty" class="empty" hidden>No projects match your filters.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Chris Currington · The Lab · Built with vanilla HTML/CSS/JS</small>
+    </div>
+  </footer>
+
+  <script src="lab.js" defer></script>
+</body>
+</html>
