@@ -8,5 +8,13 @@
     "tags": ["game", "ai", "web"],
     "updated": "2025-09-26",
     "path": "tictactoe/"
+  },
+  {
+    "slug": "simon-says",
+    "name": "Simon Says Game",
+    "description": "A classic memory game where players must repeat an increasingly complex sequence of colors. Test your memory and concentration skills!",
+    "tags": ["game", "memory", "web"],
+    "updated": "2025-10-08",
+    "path": "SIMON SAYS/"
   }
 ]
