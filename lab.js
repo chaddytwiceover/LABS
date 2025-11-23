@@ -29,6 +29,30 @@
     searchEl.addEventListener('input', (e)=>{ q = e.target.value.trim().toLowerCase(); persist(); render(); });
     sortEl.value = sort;
     sortEl.addEventListener('change',(e)=>{ sort = e.target.value; persist(); render(); });
+    
+    // Cursor trail effect
+    initCursorTrail();
+  }
+  
+  function initCursorTrail(){
+    const trail = document.querySelector('.cursor-trail');
+    if (!trail) return;
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    function updateTrail() {
+      trail.style.left = mouseX + 'px';
+      trail.style.top = mouseY + 'px';
+      requestAnimationFrame(updateTrail);
+    }
+    
+    updateTrail();
   }
 
   function restoreFilters(){
