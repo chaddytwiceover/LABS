@@ -29,6 +29,51 @@
     searchEl.addEventListener('input', (e)=>{ q = e.target.value.trim().toLowerCase(); persist(); render(); });
     sortEl.value = sort;
     sortEl.addEventListener('change',(e)=>{ sort = e.target.value; persist(); render(); });
+    
+    // Cursor trail effect
+    initCursorTrail();
+  }
+  
+  function initCursorTrail(){
+    const trail = document.querySelector('.cursor-trail');
+    if (!trail) return;
+    
+    // Check for reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let isMoving = false;
+    
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      isMoving = true;
+    });
+    
+    function updateTrail() {
+      if (isMoving) {
+        // Smooth lerp for trail effect
+        currentX += (mouseX - currentX) * 0.15;
+        currentY += (mouseY - currentY) * 0.15;
+        
+        trail.style.left = currentX + 'px';
+        trail.style.top = currentY + 'px';
+        
+        // Stop updating if position is close enough
+        if (Math.abs(mouseX - currentX) < 0.5 && Math.abs(mouseY - currentY) < 0.5) {
+          isMoving = false;
+        }
+      }
+      
+      requestAnimationFrame(updateTrail);
+    }
+    
+    updateTrail();
   }
 
   function restoreFilters(){

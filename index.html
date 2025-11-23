@@ -4,38 +4,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Lab — Experiments</title>
+  <title>LABS — CHADDYTWICEOVER</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="lab.css" />
 </head>
 <body>
-  <div class="bg" aria-hidden="true"></div>
-  <div class="gridlines" aria-hidden="true"></div>
-  <div class="scanlines" aria-hidden="true"></div>
+  <div class="cursor-trail" aria-hidden="true"></div>
+  <div class="grid-bg" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <h1 class="title">THE LAB</h1>
-        <p class="tagline">Fragments of Night City. Neon-soaked experiments.</p>
+        <h1 class="title">LABS</h1>
+        <p class="tagline">Experiments and prototypes</p>
       </div>
       <nav class="quick">
-        <span class="status" aria-hidden="true">SYNAPSE ONLINE</span>
-        <a href="https://chaddytwiceover.com" class="link-root" aria-label="Back to main site">∷ Return</a>
+        <a href="https://chaddytwiceover.com" class="link-root" aria-label="Back to main site">← CHADDYTWICEOVER.COM</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="hero" aria-label="Lab overview">
-      <p class="hero-kicker">CYBERNETIC ARCHIVES</p>
-      <h2 class="hero-title">Browse prototypes fresh out of the Afterlife.</h2>
-      <p class="hero-copy">Filter, jack in, and deploy. Each build pulses with neon code and experimental tech from across the grid.</p>
+      <p class="hero-kicker">01 — PROJECTS</p>
+      <h2 class="hero-title">Experimental projects and prototypes</h2>
+      <p class="hero-copy">Browse working experiments, filter by technology, and explore live demos. Each project showcases practical implementations and technical exploration.</p>
     </section>
 
     <section class="controls" aria-label="Project filters">
+      <div class="section-label">02 — FILTER & SORT</div>
       <div class="search">
         <input id="search" type="search" placeholder="Search projects…" aria-label="Search projects" />
       </div>
@@ -43,7 +42,7 @@
       <div class="filters">
         <div id="tag-chips" class="chips" role="group" aria-label="Filter by tag"></div>
         <div class="sort">
-          <label for="sort">Sort</label>
+          <label for="sort">SORT:</label>
           <select id="sort" aria-label="Sort projects">
             <option value="updated-desc">Recently updated</option>
             <option value="updated-asc">Oldest first</option>
@@ -55,6 +54,7 @@
     </section>
 
     <section aria-live="polite">
+      <div class="section-label">03 — BROWSE</div>
       <div id="grid" class="grid" role="list"></div>
       <p id="empty" class="empty" hidden>No projects match your filters.</p>
     </section>
@@ -63,7 +63,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span>The Lab · Built with vanilla HTML/CSS/JS</small>
+      <small>© <span id="year"></span> CHADDYTWICEOVER — Design is how it works</small>
     </div>
   </footer>
 
