@@ -1,0 +1,89 @@
+<!-- /index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Little Pixels // Where Joy Meets Canvas</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="app">
+    <header class="hud-header" aria-label="App Header">
+      <div class="brand" aria-label="Brand">
+        <span class="brand-title">HAPPY LITTLE PIXELS</span>
+        <span class="muted">// Paint your joy • Create your world</span>
+      </div>
+      <div class="header-right">
+        <span class="chip">Nature Mode</span>
+      </div>
+    </header>
+
+    <div class="toolbar" role="toolbar" aria-label="Painting Tools">
+      <label class="group">
+        <span>Color</span>
+        <input type="color" id="colorPicker" title="Color (C to pick)"/>
+      </label>
+
+      <label class="group">
+        <span>Tool</span>
+        <select id="toolSelect" title="Tools: Nature's Brushes">
+          <option value="brush">Nature Brush</option>
+          <option value="eraser">Cloud Wipe</option>
+          <option value="line">Tree Branch</option>
+          <option value="rect">Mountain Frame</option>
+          <option value="ellipse">Happy Circle</option>
+          <option value="fill">Color Wash</option>
+          <option value="picker">Color Harvest</option>
+        </select>
+      </label>
+
+      <label class="group grow">
+        <span>Size</span>
+        <input type="range" id="brushSize" min="1" max="50" value="5" title="[ / ] to adjust">
+      </label>
+
+      <div class="spacer"></div>
+
+      <button id="undoBtn" title="Step Back (Ctrl+Z)" class="btn">Undo</button>
+      <button id="redoBtn" title="Step Forward (Ctrl+Y)" class="btn">Redo</button>
+      <button id="toggleGrid" aria-pressed="false" title="Show Grid (G)" class="btn">Grid</button>
+      <button id="resetBtn" title="Fresh Canvas" class="btn danger">New Canvas</button>
+      <button id="exportBtn" title="Save Your Masterpiece" class="btn primary">Save Art</button>
+    </div>
+
+    <div id="canvasFrame">
+      <div id="canvasWrapper">
+        <canvas id="canvas"></canvas>
+        <canvas id="overlayCanvas" aria-hidden="true"></canvas>
+      </div>
+      <div class="frame-corners" aria-hidden="true"></div>
+    </div>
+
+    <footer class="hud-footer" aria-live="polite">
+      <div class="stat"><span class="label">Tool</span><span id="hudTool">Paintbrush</span></div>
+      <div class="stat"><span class="label">Color</span><span id="hudColor">#000000</span></div>
+      <div class="stat"><span class="label">Size</span><span id="hudSize">5</span></div>
+      <div class="stat"><span class="label">Zoom</span><span id="hudZoom">1600%</span></div>
+      <div class="stat"><span class="label">Coords</span><span id="hudCoords">— , —</span></div>
+      <div class="stat hide-on-mobile"><span class="label">Happy Shortcuts</span>
+        <span class="kbd">1-7</span><span class="muted">tools</span>
+        <span class="kbd">G</span><span class="muted">grid</span>
+        <span class="kbd">[ ]</span><span class="muted">brush</span>
+        <span class="kbd">+ -</span><span class="muted">zoom</span>
+        <span class="kbd">Drag</span><span class="muted">pan</span>
+      </div>
+    </footer>
+  </div>
+
+  <svg width="0" height="0" class="defs">
+    <filter id="crt">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0.8"/>
+      <feBlend in="SourceGraphic" in2="n" mode="soft-light"/>
+    </filter>
+  </svg>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

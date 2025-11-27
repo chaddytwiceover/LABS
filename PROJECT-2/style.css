@@ -1,0 +1,311 @@
+/* /style.css */
+/* Happy Little Pixels - Bob Ross Inspired Theme */
+:root{
+  /* Nature-inspired palette */
+  --forest-deep: #1a2b1a;     /* deep forest shadow */
+  --forest-mid: #2d4a2d;      /* evergreen pine */
+  --forest-light: #4a6b4a;    /* summer meadow */
+  --earth-rich: #8b4513;      /* rich earth brown */
+  --earth-warm: #d2b48c;      /* warm sand */
+  --earth-cream: #f5f5dc;     /* canvas cream */
+  --sky-blue: #87ceeb;        /* gentle sky */
+  --sky-soft: #b6d7e8;        /* soft cloud */
+  --mountain-gray: #708090;   /* distant mountain */
+  --sunset-gold: #daa520;     /* golden hour */
+  --autumn-orange: #cd853f;   /* autumn leaf */
+  
+  /* Semantic colors */
+  --bg-primary: linear-gradient(135deg, #f5f5dc 0%, #f0e68c 20%, #e6ddd4 100%);
+  --bg-secondary: linear-gradient(145deg, #e6ddd4 0%, #deb887 50%, #d2b48c 100%);
+  --bg-canvas: #fffef7;       /* warm canvas white */
+  --text-primary: #2f1b14;    /* warm dark brown */
+  --text-secondary: #5d4037;  /* medium brown */
+  --text-muted: #8d6e63;      /* soft brown-gray */
+  
+  /* Interactive states */
+  --accent-primary: #4a6b4a;  /* forest green */
+  --accent-warm: #cd853f;     /* warm autumn */
+  --accent-sky: #87ceeb;      /* gentle blue */
+  --danger: #a0522d;          /* muted sienna red */
+  
+  /* Effects */
+  --wood-texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect width="100%" height="100%" fill="%23d2b48c"/><path d="M0 0h60v60H0z" fill="none" stroke="%23cd853f" stroke-width="0.5" opacity="0.3"/><path d="M0 15h60M0 30h60M0 45h60" stroke="%23a0522d" stroke-width="0.2" opacity="0.5"/></svg>');
+  --canvas-texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100%" height="100%" fill="%23fffef7"/><circle cx="20" cy="20" r="1" fill="%23f0e68c" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="%23daa520" opacity="0.1"/><circle cx="50" cy="80" r="1" fill="%23cd853f" opacity="0.1"/></svg>');
+  
+  --soft-shadow: 0 8px 25px rgba(47, 27, 20, 0.15);
+  --warm-glow: 0 0 20px rgba(218, 165, 32, 0.2);
+  --nature-ring: 0 0 0 3px rgba(74, 107, 74, 0.3);
+  --earth-ring: 0 0 0 3px rgba(205, 133, 63, 0.3);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body,#app{height:100%}
+body{
+  font-family: 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Bob Ross atmosphere - subtle natural overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(74, 107, 74, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(135, 206, 235, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(218, 165, 32, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Mountain silhouette background */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 25vh;
+  background: linear-gradient(to right, 
+    rgba(112, 128, 144, 0.08) 0%, 
+    rgba(112, 128, 144, 0.12) 25%, 
+    rgba(74, 107, 74, 0.15) 50%, 
+    rgba(112, 128, 144, 0.12) 75%, 
+    rgba(112, 128, 144, 0.08) 100%);
+  clip-path: polygon(0 100%, 0 80%, 15% 60%, 25% 70%, 40% 50%, 55% 65%, 70% 45%, 85% 70%, 100% 55%, 100% 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.hud-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 24px;border-bottom:2px solid rgba(139, 69, 19, 0.1);
+  background: var(--wood-texture), linear-gradient(180deg, rgba(245,245,220,0.95), rgba(240,230,140,0.8));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 8px rgba(47, 27, 20, 0.1);
+}
+.brand{font-weight:700;display:flex;flex-direction:column}
+.brand-title{
+  font-family: 'Brush Script MT', 'Segoe Script', cursive; 
+  font-size:28px; 
+  color: var(--forest-mid);
+  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.2);
+  letter-spacing: 1px;
+}
+.muted{color:var(--text-muted); font-size:13px; font-style: italic}
+.header-right .chip{
+  border:2px solid var(--accent-warm);
+  padding:8px 16px; border-radius:25px; font-size:12px; color:var(--accent-warm);
+  background: linear-gradient(145deg, rgba(245,245,220,0.9), rgba(240,230,140,0.7));
+  box-shadow: var(--soft-shadow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+/* Remove glitch animations - doesn't fit Bob Ross aesthetic */
+
+
+/* Gentle floating animation for elements */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes warm-glow-pulse {
+  0%, 100% { box-shadow: var(--soft-shadow), inset 0 0 30px rgba(218, 165, 32, 0.08); }
+  50% { box-shadow: var(--soft-shadow), inset 0 0 40px rgba(218, 165, 32, 0.12); }
+}
+
+/* Add subtle float to header elements */
+.brand-title {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+.chip {
+  animation: gentle-float 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Gentle breathing effect for canvas */
+#canvasWrapper {
+  animation: warm-glow-pulse 4s ease-in-out infinite;
+}
+
+
+/* Toolbar */
+.toolbar{
+  display:flex;align-items:center;gap:12px;padding:16px 20px; flex-wrap:wrap;
+  background: var(--wood-texture), linear-gradient(135deg, rgba(238, 228, 215, 0.9), rgba(228, 218, 205, 0.85));
+  border-bottom:2px solid rgba(139, 69, 19, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.group{
+  display:flex;align-items:center;gap:10px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(245,240,230,0.7));
+  padding:10px 14px;border:1px solid rgba(139, 69, 19, 0.12);border-radius:12px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 2px 8px rgba(47, 27, 20, 0.08);
+}
+.group span{font-size:13px;color:var(--text-secondary); font-weight: 500}
+.group.grow{flex:1}
+.spacer{flex:1}
+
+input[type="color"]{
+  -webkit-appearance:none; appearance: none; border:none; background:transparent; 
+  width:42px; height:34px; padding:0; cursor:pointer;
+  border-radius:10px; 
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 2px 8px rgba(47, 27, 20, 0.1);
+  border: 2px solid rgba(139, 69, 19, 0.2);
+  transition: all 0.2s ease;
+}
+input[type="color"]:hover{
+  transform: translateY(-1px);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 4px 12px rgba(47, 27, 20, 0.15);
+}
+
+select, .btn{
+  background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(245,240,230,0.85));
+  color:var(--text-primary); 
+  border:1px solid rgba(139, 69, 19, 0.15);
+  border-radius:10px; padding:10px 14px; cursor:pointer; 
+  transition: all 0.2s ease; 
+  box-shadow: 0 2px 8px rgba(47, 27, 20, 0.08);
+  font-family: inherit;
+  font-weight: 500;
+}
+select:hover,.btn:hover{ 
+  transform: translateY(-1px); 
+  box-shadow: 0 4px 12px rgba(47, 27, 20, 0.12);
+  border-color: rgba(139, 69, 19, 0.25);
+}
+
+.btn.primary{ 
+  border-color: var(--accent-warm); 
+  background: linear-gradient(145deg, rgba(205,133,63,0.15), rgba(205,133,63,0.08)); 
+  color: var(--accent-warm);
+}
+.btn.danger{ 
+  border-color: var(--danger); 
+  background: linear-gradient(145deg, rgba(160,82,45,0.12), rgba(160,82,45,0.06)); 
+  color: var(--danger);
+}
+.btn.active{ 
+  background: linear-gradient(145deg, rgba(74,107,74,0.15), rgba(74,107,74,0.08));
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: var(--nature-ring), 0 2px 8px rgba(47, 27, 20, 0.08);
+}
+select:focus,.btn:focus{ 
+  box-shadow: var(--nature-ring), 0 2px 8px rgba(47, 27, 20, 0.08); 
+  outline:none;
+}
+
+input[type="range"]{
+  min-width: 80px; width:100%; height:28px; background:transparent;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-warm) 100%);
+  height:4px; border-radius:999px; opacity:.8;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none; width:18px;height:18px;margin-top:-7px;border-radius:50%;
+  background:var(--bg-canvas); border:2px solid var(--earth-rich); box-shadow: 0 2px 6px rgba(47, 27, 20, 0.15);
+}
+input[type="range"]::-moz-range-track{
+  height:4px;background:linear-gradient(90deg,var(--accent-primary),var(--accent-warm));border-radius:999px
+}
+input[type="range"]::-moz-range-thumb{
+  width:18px;height:18px;border-radius:50%;border:2px solid var(--earth-rich);
+  background:var(--bg-canvas);box-shadow:0 2px 6px rgba(47, 27, 20, 0.15)
+}
+
+
+/* Canvas frame */
+#canvasFrame{
+  position:relative; flex:1; display:flex; align-items:center; justify-content:center;
+  padding:18px; background: linear-gradient(180deg, rgba(230,224,208,0.4), rgba(241,239,230,0.2));
+}
+#canvasWrapper{
+  position:relative; width:100%; height:100%;
+  background: var(--canvas-texture), linear-gradient(180deg, rgba(255,255,255,0.9), rgba(240,236,224,0.95));
+  border:3px solid rgba(139, 69, 19, 0.2); border-radius:18px; overflow:hidden;
+  box-shadow: var(--soft-shadow), inset 0 0 30px rgba(218, 165, 32, 0.1);
+  cursor: crosshair;
+  transition: all 0.3s ease;
+}
+#canvasWrapper:hover {
+  box-shadow: var(--soft-shadow), inset 0 0 30px rgba(218, 165, 32, 0.15), var(--warm-glow);
+  border-color: rgba(139, 69, 19, 0.3);
+}
+/* Remove scanlines effect - doesn't fit Bob Ross aesthetic */
+#canvasWrapper.panning{cursor: grabbing}
+
+canvas,#overlayCanvas{
+  position:absolute; image-rendering: pixelated; image-rendering: crisp-edges; transform-origin:0 0;
+}
+#canvas{
+  background: var(--canvas-texture), linear-gradient(135deg, #fffef7 0%, #faf8f0 100%);
+  border:1px solid rgba(139, 69, 19, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 4px 12px rgba(47, 27, 20, 0.08);
+  border-radius: 4px;
+}
+#overlayCanvas{ pointer-events:none }
+
+/* Decorative frame corners */
+.frame-corners::before,.frame-corners::after{
+  content:""; position:absolute; inset:16px; border:1px dashed rgba(107,143,74,0.12); border-radius:16px; pointer-events:none;
+}
+
+/* HUD footer */
+.hud-footer{
+  display:flex; gap:18px; align-items:center; flex-wrap:wrap; position: relative;
+  padding:16px 18px; 
+  border-top:2px solid rgba(139, 69, 19, 0.08);
+  background: var(--wood-texture), linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,240,228,0.95));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+}
+.hud-footer::after {
+  content: '"There are no mistakes, only happy little accidents" – Bob Ross';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  padding: 4px 12px;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-style: italic;
+  opacity: 0.5;
+  background: rgba(245,240,228,0.7);
+  border-radius: 4px 4px 0 0;
+}
+.stat{display:flex; gap:8px; align-items:center; position: relative; z-index: 1;}
+.stat .label{color:var(--text-muted); font-size:12px}
+.kbd{
+  display:inline-flex; align-items:center; justify-content:center; font-size:11px;
+  min-width:22px; padding:2px 6px; margin:0 6px 0 10px; border-radius:6px;
+  background: linear-gradient(145deg, rgba(245,240,230,0.9), rgba(230,220,210,0.8)); 
+  border:1px solid rgba(139, 69, 19, 0.15); 
+  color: var(--accent-primary);
+  box-shadow: 0 1px 3px rgba(47, 27, 20, 0.1);
+}
+.hide-on-mobile{display:none}
+@media (min-width: 640px) {
+  .toolbar { gap: 12px; padding: 10px 12px; }
+}
+@media (min-width:860px){
+  .hide-on-mobile{display:flex; align-items:center; gap:0}
+  #canvasFrame { padding: 24px; }
+}
+
+/* Focus ring for keyboard users */
+:focus-visible{ outline:none; box-shadow: var(--nature-ring) }
+
+/* Utility */
+.muted{color:var(--text-muted)}

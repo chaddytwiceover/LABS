@@ -1,0 +1,108 @@
+<!-- /index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic Tac Toe</title>
+  <meta name="description" content="A simple tic-tac-toe game with AI opponent." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Game board is the primary focus -->
+    <main class="game">
+      <div class="board-wrapper">
+        <div id="game-board" class="board" role="grid" aria-label="Tic Tac Toe Board">
+          <button class="cell" data-cell data-index="0" role="gridcell" aria-label="Cell 1: Empty" tabindex="0"></button>
+          <button class="cell" data-cell data-index="1" role="gridcell" aria-label="Cell 2: Empty" tabindex="0"></button>
+          <button class="cell" data-cell data-index="2" role="gridcell" aria-label="Cell 3: Empty" tabindex="0"></button>
+          <button class="cell" data-cell data-index="3" role="gridcell" aria-label="Cell 4: Empty" tabindex="0"></button>
+          <button class="cell" data-cell data-index="4" role="gridcell" aria-label="Cell 5: Empty" tabindex="0"></button>
+          <button class="cell" data-cell data-index="5" role="gridcell" aria-label="Cell 6: Empty" tabindex="0"></button>
+          <button class="cell" data-cell data-index="6" role="gridcell" aria-label="Cell 7: Empty" tabindex="0"></button>
+          <button class="cell" data-cell data-index="7" role="gridcell" aria-label="Cell 8: Empty" tabindex="0"></button>
+          <button class="cell" data-cell data-index="8" role="gridcell" aria-label="Cell 9: Empty" tabindex="0"></button>
+        </div>
+        <div id="winning-line" class="winning-line" aria-hidden="true"></div>
+      </div>
+
+      <!-- Status and primary action together -->
+      <div id="status-display" class="status" role="status" aria-live="polite">Your turn</div>
+      <button id="restart-button" class="new-game-btn" aria-label="New Game">New Game</button>
+    </main>
+
+    <!-- Compact score display -->
+    <div class="score-bar" aria-label="Score">
+      <span class="score"><span class="score-icon x">X</span> <span id="score-x">0</span></span>
+      <span class="score"><span class="score-icon o">O</span> <span id="score-o">0</span></span>
+      <span class="score"><span class="score-label">Draws</span> <span id="score-draw">0</span></span>
+    </div>
+
+    <!-- Settings in a simple row -->
+    <div class="settings">
+      <div class="setting-group" role="radiogroup" aria-label="Play as">
+        <input type="radio" id="human-x" name="human" value="x" checked />
+        <label for="human-x">Play X</label>
+        <input type="radio" id="human-o" name="human" value="o" />
+        <label for="human-o">Play O</label>
+      </div>
+      <div class="setting-group" role="radiogroup" aria-label="AI Difficulty">
+        <input type="radio" id="easy" name="difficulty" value="easy" checked />
+        <label for="easy">Easy</label>
+        <input type="radio" id="medium" name="difficulty" value="medium" />
+        <label for="medium">Medium</label>
+        <input type="radio" id="hard" name="difficulty" value="hard" />
+        <label for="hard">Hard</label>
+      </div>
+    </div>
+
+    <!-- Color Pickers -->
+    <div class="color-settings">
+      <div class="color-picker" role="radiogroup" aria-label="X Color">
+        <span class="color-label">X Color</span>
+        <div class="color-options">
+          <input type="radio" id="x-teal" name="x-color" value="teal" checked />
+          <label for="x-teal" class="color-swatch teal" title="Teal"></label>
+          <input type="radio" id="x-red" name="x-color" value="red" />
+          <label for="x-red" class="color-swatch red" title="Red"></label>
+          <input type="radio" id="x-blue" name="x-color" value="blue" />
+          <label for="x-blue" class="color-swatch blue" title="Blue"></label>
+          <input type="radio" id="x-green" name="x-color" value="green" />
+          <label for="x-green" class="color-swatch green" title="Green"></label>
+          <input type="radio" id="x-purple" name="x-color" value="purple" />
+          <label for="x-purple" class="color-swatch purple" title="Purple"></label>
+        </div>
+      </div>
+      <div class="color-picker" role="radiogroup" aria-label="O Color">
+        <span class="color-label">O Color</span>
+        <div class="color-options">
+          <input type="radio" id="o-orange" name="o-color" value="orange" checked />
+          <label for="o-orange" class="color-swatch orange" title="Orange"></label>
+          <input type="radio" id="o-pink" name="o-color" value="pink" />
+          <label for="o-pink" class="color-swatch pink" title="Pink"></label>
+          <input type="radio" id="o-cyan" name="o-color" value="cyan" />
+          <label for="o-cyan" class="color-swatch cyan" title="Cyan"></label>
+          <input type="radio" id="o-yellow" name="o-color" value="yellow" />
+          <label for="o-yellow" class="color-swatch yellow" title="Yellow"></label>
+          <input type="radio" id="o-lime" name="o-color" value="lime" />
+          <label for="o-lime" class="color-swatch lime" title="Lime"></label>
+        </div>
+      </div>
+    </div>
+
+    <button id="reset-scores" class="reset-btn" aria-label="Reset Scores">Reset Scores</button>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="https://chaddytwiceover.com" target="_blank" rel="noopener noreferrer">chaddytwiceover.com</a>
+        <span class="footer-divider">|</span>
+        <a href="https://lab.chaddytwiceover.com" target="_blank" rel="noopener noreferrer">lab.chaddytwiceover.com</a>
+      </div>
+      <p class="footer-tagline">Made With Care &lt;3</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
