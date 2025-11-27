@@ -6,13 +6,21 @@
     "name": "Tic Tac Toe",
     "description": "Neon-themed, AI opponent, keyboard-friendly.",
     "tags": ["game", "ai", "web"],
-    "updated": "2025-09-26",
-    "path": "tictactoe/"
+    "updated": "2025-11-27",
+    "path": "PROJECT-1/"
+  },
+  {
+    "slug": "happy-little-pixels",
+    "name": "Happy Little Pixels",
+    "description": "A Bob Ross inspired pixel art editor. Paint your joy.",
+    "tags": ["art", "tool", "web"],
+    "updated": "2025-11-27",
+    "path": "PROJECT-2/"
   },
   {
     "slug": "simon-says",
     "name": "Simon Says Game",
-    "description": "A classic memory game where players must repeat an increasingly complex sequence of colors. Test your memory and concentration skills!",
+    "description": "A classic memory game where players must repeat an increasingly complex sequence of colors.",
     "tags": ["game", "memory", "web"],
     "updated": "2025-10-08",
     "path": "SIMON SAYS/"
