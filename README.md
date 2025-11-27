@@ -61,6 +61,32 @@ python3 -m http.server 8080
 
 Then navigate to `http://localhost:8080`
 
+## Deployment
+
+### DigitalOcean App Platform
+
+This repository is configured for DigitalOcean App Platform deployment. The configuration is located in `.do/app.yaml`.
+
+#### Quick Deploy
+
+1. Fork or clone this repository to your GitHub account
+2. **Update `.do/app.yaml`**: Change `repo: chaddytwiceover/LABS` to your repository path
+3. Go to [DigitalOcean App Platform](https://cloud.digitalocean.com/apps)
+4. Click "Create App" and select "GitHub"
+5. Choose this repository
+6. App Platform will automatically detect the `.do/app.yaml` configuration
+7. Review settings and click "Create Resources"
+
+The app will be deployed as a static site with automatic deployments on push to the main branch.
+
+#### Manual Configuration
+
+If you prefer to configure manually:
+- **Source**: GitHub repository
+- **Type**: Static Site
+- **Output Directory**: `/`
+- **Index Document**: `index.html`
+
 ## Philosophy
 
 **"Design is how it works"**

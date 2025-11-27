@@ -1,13 +1,21 @@
 {
-    "name": "ionos-labs",
+    "name": "labs",
     "version": "1.0.0",
-    "description": "Lab projects collection",
+    "description": "Lab projects collection for CHADDYTWICEOVER",
     "scripts": {
-        "start": "npx http-server . -p 8080"
+        "start": "http-server . -p 8080"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "labs",
+        "experiments",
+        "portfolio",
+        "static-site"
+    ],
+    "author": "CHADDYTWICEOVER",
     "license": "ISC",
+    "engines": {
+        "node": ">=18.0.0"
+    },
     "dependencies": {
         "http-server": "^14.1.1"
     }
