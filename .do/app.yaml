@@ -1,7 +1,11 @@
+# DigitalOcean App Platform Configuration
+# For more info: https://docs.digitalocean.com/products/app-platform/reference/app-spec/
+
 name: labs
 region: nyc
 static_sites:
   - name: labs-site
+    # Update 'repo' below if you fork this repository to your own account
     github:
       repo: chaddytwiceover/LABS
       branch: main

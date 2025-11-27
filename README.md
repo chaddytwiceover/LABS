@@ -70,11 +70,12 @@ This repository is configured for DigitalOcean App Platform deployment. The conf
 #### Quick Deploy
 
 1. Fork or clone this repository to your GitHub account
-2. Go to [DigitalOcean App Platform](https://cloud.digitalocean.com/apps)
-3. Click "Create App" and select "GitHub"
-4. Choose this repository
-5. App Platform will automatically detect the `.do/app.yaml` configuration
-6. Review settings and click "Create Resources"
+2. **Update `.do/app.yaml`**: Change `repo: chaddytwiceover/LABS` to your repository path
+3. Go to [DigitalOcean App Platform](https://cloud.digitalocean.com/apps)
+4. Click "Create App" and select "GitHub"
+5. Choose this repository
+6. App Platform will automatically detect the `.do/app.yaml` configuration
+7. Review settings and click "Create Resources"
 
 The app will be deployed as a static site with automatic deployments on push to the main branch.
 
